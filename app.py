@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, session, redirect, url_for
-from flask_socketio import join_room, leave_room, send, SocketIO
+from flask_socketio import join_room, leave_room, send, SocketIO, emit
 import random
 from string import ascii_uppercase
 
-
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "I_love_you_3000"
+app.config["SECRET_KEY"] = "Krw90{veookke]mn!34m"
 socketio = SocketIO(app)
 
 rooms = {}
@@ -34,7 +33,7 @@ def index():
             return render_template("index.html", error="Please enter a valid room code.", code=code, name=name)
         room = code
         if create != False:
-            room = generate_unic_code(4)
+            room = generate_unic_code(6)
             rooms[room] = {"members": 0, "messages": []}
         elif code not in rooms:
             return render_template("index.html", error = "Room doesn't exist.", code=code, name=name)
@@ -97,4 +96,4 @@ def disconnect():
     print(f"{name} left the room {room}")
 
 if __name__ == "__main__":
-    socketio.run(app, debug=True, port=5000)
+    socketio.run(app, debug=True, host="IP_ADDRESS", port=80)

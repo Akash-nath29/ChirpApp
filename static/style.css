@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     font-family: 'Kanit', sans-serif;
 }
+
 .container {
     width: 100%;
     height: 100vh;
@@ -12,6 +14,7 @@
     justify-content: center;
     background-color: #454545;
 }
+
 #formId {
     display: flex;
     flex-direction: column;
@@ -21,35 +24,61 @@
     height: auto;
     gap: 20px;
 }
+
 #formId h1 {
     color: #fff;
 }
+
 .roomCode {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
 }
-.create-btn {
-    width: 50%;
-}
-.authentication *{
+
+.authentication * {
     font-size: 15px;
 }
-.authentication label {
+
+#or {
     color: #fff;
-    font-size: 20px;
 }
+
+#nameInput {
+    width: 25vw;
+    height: 5vh;
+    padding: 0 20px;
+}
+
+.create-btn {
+    width: 10vw;
+    cursor: pointer;
+}
+
 .roomCode * {
-    margin: 0 2vh;
+    margin: 1vh;
     font-size: 15px;
 }
+
+#roomCode {
+    width: 25vw;
+    height: 5vh;
+    padding: 0 20px;
+}
+
+.joinroom {
+    width: 10vw;
+    cursor: pointer;
+}
+
 #formId input[type=text] {
     padding: 5px 10px;
     border: none;
     outline: none;
     border-radius: 10px;
 }
+
 #formId button {
     padding: 5px 10px;
     font-size: 15px;
@@ -58,6 +87,7 @@
     border: 1px solid #460087;
     border-radius: 10px;
 }
+
 ul li {
     color: #ff8282;
 }
@@ -72,35 +102,53 @@ ul li {
     width: 80vw;
     align-items: stretch;
 }
+
 .messages {
     overflow-y: scroll;
     flex: 1;
     width: 100%;
     padding: 10px;
+    margin-bottom: 70px;
 }
+
 .text {
     color: #fff;
 }
+
 .messages::-webkit-scrollbar {
     width: 10px;
     background-color: aqua;
 }
+
 .messages::-webkit-scrollbar-button {
     background-color: aquamarine;
 }
+
 .inputs {
     position: absolute;
     top: 80%;
     width: 75vw;
     padding: 10px;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.inputs #imageShare {
+    display: none;
+}
+
+.inputs svg {
+    cursor: pointer;
+}
+
 h2 {
     text-align: center;
     color: #fff;
     font-size: 30px;
 }
-#message{
+
+#message {
     flex: 1;
     height: 5vh;
     padding: 5px 20px;
@@ -108,14 +156,110 @@ h2 {
     outline: none;
     border-radius: 10px;
     font-size: 20px;
-    margin: 0 2vw;
+    margin: 0 2vw 0 1vw;
 }
+
 #sendBtn {
-    width: 10vw;
+    width: 8vh;
+    height: 7vh;
     font-size: 20px;
     border: 1px solid #fff;
     outline: none;
     background-color: #460087;
     color: #fff;
     border-radius: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#userName {
+    color: #ff8282;
+}
+
+.muted {
+    color: #dfdfdf;
+}
+
+@media screen and (max-width:600px) {
+    .container {
+        height: 93vh;
+    }
+
+    .roomCode * {
+        margin: 0 3px;
+    }
+
+    .messages::-webkit-scrollbar {
+        display: none;
+    }
+
+    .inputs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 87vw;
+        top: 90%;
+    }
+
+    .inputs #imageShareBtn {
+        cursor: pointer;
+        margin: 0 1vh 0 -1vh;
+    }
+
+    #message {
+        flex: 1;
+        height: 3vh;
+        padding: 5px 10px;
+        font-size: 15px;
+        margin: 0 3px;
+    }
+
+    #sendBtn {
+        font-size: 15px;
+        width: 15vw;
+        height: 5vh;
+        margin: 0 2vh;
+        padding: 5px 10px;
+    }
+
+    .messages {
+        white-space: normal;
+        word-wrap: normal;
+        margin-bottom: 0;
+        margin-top: 1;
+    }
+
+    .message-box {
+        height: 90vh;
+        width: 90vw;
+    }
+
+    .text {
+        white-space: normal;
+        word-wrap: normal;
+    }
+
+    #nameInput {
+        width: 60vw;
+        height: 4vh;
+        padding: 5px 10px;
+    }
+
+    .create-btn {
+        width: 40vw;
+        cursor: pointer;
+        margin-top: 2vh;
+    }
+
+    #roomCode {
+        width: 60vw;
+        height: 4vh;
+        padding: 5px 10px;
+        margin: 2vh 0;
+    }
+
+    .joinroom {
+        width: 30vw;
+        cursor: pointer;
+    }
 }
